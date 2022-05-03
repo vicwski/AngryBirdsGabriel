@@ -3,11 +3,15 @@ const World = Matter.World
 const Bodies = Matter.Bodies
 
 var engine, world
-var ground
+var ground, backgroundImg
 var box1, box2, box3, box4, box5
 var log1, log2, log3, log4
 var pig1, pig2
 var bird
+
+function preload() {
+  backgroundImg = loadImage('sprites/bg.png')
+}
 
 function setup() {
   var canvas = createCanvas(1200, 400)
@@ -34,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  background(0)
+  background(backgroundImg)
   Engine.update(engine)
 
   ground.display()
